@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="../compiled/flipclock.css">
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+		<script src="../compiled/flipclock.js"></script>		
+	</head>
+	<body>
+	<div class="clock" style=";"></div>
+
+	<button class="start" >Start Clock</button>
+    <button class="stop">Stop Clock</button>
+    <button class="reset">Reset Clock</button>
+
+	<script type="text/javascript">
+		var clock;
+		
+		$(document).ready(function() {
+			
+			clock = $('.clock').FlipClock(4800, {
+		        clockFace: 'MinuteCounter',
+		        countdown: true,
+		        autoStart: false,
+		        callbacks: true
+		    });
+
+		    $('.start').click(function(e) {
+
+		    	clock.start();
+		    });
+            $('.stop').click(function(e) {
+
+		    	clock.stop();
+		    });
+            $('.reset').click(function(e) {
+                location.reload();
+		    });
+		});
+	</script>
+	
+	</body>
+</html>
